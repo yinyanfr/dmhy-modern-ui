@@ -1,20 +1,20 @@
-import { EelList, SearchBar } from '@/components';
+import { EelList, Paginator, SearchBar } from '@/components';
 import { isMobile } from '@/lib';
+import { getDMHYList } from '@/services';
 import { PageContainer } from '@ant-design/pro-layout';
-import { BackTop, Divider } from 'antd';
+import { BackTop } from 'antd';
 import type { FC } from 'react';
 import { Helmet, useRequest } from 'umi';
 
 const App: FC = () => {
-  const { loading, data, refresh } = useRequest<{ data: EelItem[] }>(
-    '/api/list',
-  );
+  const { loading, data, refresh, run } = useRequest(getDMHYList);
 
   const listview = (
     <>
-      <SearchBar />
+      <SearchBar run={run} />
       <div className="gap-12" />
-      <EelList data={data} loading={loading} refresh={refresh} />
+      <EelList data={data} loading={loading} refresh={refresh} run={run} />
+      <Paginator loading={loading} run={run} />
     </>
   );
 

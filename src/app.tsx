@@ -1,4 +1,7 @@
+import { Footer, RightContent } from './components';
+
 export const layout = {
-  rightContentRender: () => null,
+  rightContentRender: () => <RightContent />,
+  footerRenderer: () => <Footer />,
   disableContentMargin: true,
 };

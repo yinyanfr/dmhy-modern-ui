@@ -57,3 +57,7 @@ export function sortData(data: EelItem[] = [], sorter: ISort = {}): EelItem[] {
   }
   return copy;
 }
+
+export function simplifyMagnet(magnet: string): string {
+  return magnet.match(/^magnet:\?xt=urn:btih:[a-zA-Z0-9]+/)?.[0] || '';
+}
