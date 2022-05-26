@@ -1,13 +1,19 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
+/**
+ * Modified from React-DarkReader
+ * Original Author: Turkyden
+ * https://github.com/Turkyden/react-darkreader
+ */
+
+import { useState, useEffect } from 'react';
 import {
   enable as enableDarkMode,
   disable as disableDarkMode,
-  auto as followSystemColorScheme,
+  // auto as followSystemColorScheme,
   exportGeneratedCSS as collectCSS,
   setFetchMethod,
-  Theme,
-  DynamicThemeFix,
 } from '@umijs/ssr-darkreader';
+import type { Theme, DynamicThemeFix } from '@umijs/ssr-darkreader';
 
 export type Action = {
   toggle: () => void;
@@ -17,7 +23,7 @@ export type Action = {
 export type Result = [boolean, Action];
 
 export default function useDarkreader(
-  defaultDarken: boolean = false,
+  defaultDarken = false,
   theme?: Partial<Theme>,
   fixes?: DynamicThemeFix,
 ): Result {
@@ -40,12 +46,11 @@ export default function useDarkreader(
   useEffect(() => {
     setFetchMethod(window.fetch);
 
-    isDark
-      ? enableDarkMode(
-          { ...defaultTheme, ...(theme || {}) },
-          { ...defaultFixes, ...(fixes || {}) },
-        )
-      : disableDarkMode();
+    if (isDark) {
+      enableDarkMode({ ...defaultTheme, ...theme }, { ...defaultFixes, ...fixes });
+    } else {
+      disableDarkMode();
+    }
 
     // unmount
     return () => {
@@ -53,12 +58,14 @@ export default function useDarkreader(
     };
 
     // TODO: followSystemColorScheme();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDark]);
 
   const action = useMemo(() => {
     const toggle = () => setIsDark((prevState) => !prevState);
 
     return { toggle, collectCSS };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDark]);
 
   return [isDark, action];

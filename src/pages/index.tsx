@@ -22,10 +22,7 @@ const App: FC = () => {
     <>
       <Helmet>
         <title>冻鳗花园</title>
-        <meta
-          name="description"
-          content="Yet another dmhy frontend implementation"
-        />
+        <meta name="description" content="Yet another dmhy frontend implementation" />
       </Helmet>
       <BackTop />
       {isMobile() ? (

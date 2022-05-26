@@ -8,8 +8,7 @@ import { isBrowser } from 'umi';
 const RightContent: FC = () => {
   const [isDark, { toggle }] = useDarkreader(
     localStorage.getItem('theme') === 'realDark' ||
-      (window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches),
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),
   );
 
   return (

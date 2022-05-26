@@ -21,9 +21,7 @@ export function convertFromByte(byte: number) {
 
 export function isMobile(): boolean {
   if (isBrowser()) {
-    return (
-      window.innerWidth < 480 && window.innerWidth / window.innerHeight < 0.75
-    );
+    return window.innerWidth < 480 && window.innerWidth / window.innerHeight < 0.75;
   }
   return false;
 }
@@ -43,16 +41,11 @@ export function sortData(data: EelItem[] = [], sorter: ISort = {}): EelItem[] {
   if (!dataIndex) return data;
   const copy = [...data];
   if (dataIndex === 'size') {
-    copy.sort(
-      (a, b) =>
-        (type === 'descend' ? -1 : 1) * ((a?.size || 0) - (b?.size || 0)),
-    );
+    copy.sort((a, b) => (type === 'descend' ? -1 : 1) * ((a?.size || 0) - (b?.size || 0)));
   }
   if (dataIndex === 'time') {
     copy.sort(
-      (a, b) =>
-        (type === 'descend' ? 1 : -1) *
-        sortByMoment(moment(a.time), moment(b.time)),
+      (a, b) => (type === 'descend' ? 1 : -1) * sortByMoment(moment(a.time), moment(b.time)),
     );
   }
   return copy;

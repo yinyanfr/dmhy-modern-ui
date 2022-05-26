@@ -1,30 +1,47 @@
 {
-  "private": true,
+  "name": "eeling",
+  "version": "0.0.1",
+  "private": false,
+  "description": "Yet Another DMHY Frontend Implementation",
+  "license": "MIT",
   "scripts": {
-    "start": "umi dev",
+    "analyze": "cross-env ANALYZE=1 umi build",
     "build": "umi build",
-    "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+    "postinstall": "umi g tmp",
+    "lint": "umi g tmp && yarn lint:js && yarn lint:prettier && yarn tsc",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && yarn lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:prettier": "prettier -c --write \"src/**/*\" --end-of-line auto",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "openapi": "umi openapi",
+    "playwright": "playwright install && playwright test",
+    "precommit": "lint-staged",
+    "prettier": "prettier -c --write \"src/**/*\"",
+    "serve": "umi-serve",
+    "start": "umi dev",
+    "test": "umi test",
+    "tsc": "tsc --noEmit"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
     ]
+  },
+  "gitHooks": {
+    "pre-commit": "npm run lint-staged",
+    "commit-msg": "fabric verify-commit"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/pro-form": "^1.68.2",
     "@ant-design/pro-layout": "^6.5.0",
     "@ant-design/pro-list": "^1.21.64",
-    "@ant-design/pro-table": "^2.75.1",
     "@umijs/ssr-darkreader": "^4.9.45",
     "antd": "^4.20.6",
     "copy-to-clipboard": "^3.3.1",
@@ -35,8 +52,7 @@
     "react": "17.x",
     "react-dark-mode-toggle-2": "^2.0.2",
     "react-dom": "17.x",
-    "umi": "^3.5.24",
-    "uuid": "^8.3.2"
+    "umi": "^3.5.24"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
@@ -45,11 +61,20 @@
     "@types/opencc-js": "^1.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
+    "@umijs/fabric": "^2.10.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.24",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.16.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "eslint-plugin-unicorn": "^42.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.0",
+    "stylelint": "^14.8.5",
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
   }

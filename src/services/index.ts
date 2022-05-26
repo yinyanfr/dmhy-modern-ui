@@ -9,10 +9,7 @@ export interface DMHYListParams {
   page?: number;
 }
 
-export async function getDMHYList(
-  params: DMHYListParams = {},
-  options: Record<string, any> = {},
-) {
+export async function getDMHYList(params: DMHYListParams = {}, options: Record<string, any> = {}) {
   return request<{ data: EelItem[] }>(`/api/list`, {
     method: 'GET',
     params,

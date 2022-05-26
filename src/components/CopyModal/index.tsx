@@ -30,19 +30,11 @@ const CopyModal: FC<CopyModalProps> = ({ magnets = [], setMagnets }) => {
       <div>部分浏览器有剪贴板字数限制，请手动复制：</div>
       <div>
         简化磁力链接：
-        <Switch
-          checked={simplify}
-          onChange={(checked) => setSimplify(checked)}
-        />
+        <Switch checked={simplify} onChange={(checked) => setSimplify(checked)} />
         {simplify ? <span> (将丢失tracker信息)</span> : null}
       </div>
       <div className="gap-12" />
-      <Input.TextArea
-        autoSize
-        readOnly
-        showCount
-        value={localMagnets.join('\n')}
-      />
+      <Input.TextArea autoSize readOnly showCount value={localMagnets.join('\n')} />
     </Modal>
   );
 };

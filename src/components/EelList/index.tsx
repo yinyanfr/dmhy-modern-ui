@@ -20,7 +20,7 @@ import {
 import moment from 'moment';
 import { getLocale, useModel } from 'umi';
 import SorterButton from '../SorterButton';
-import { DMHYListParams } from '@/services';
+import type { DMHYListParams } from '@/services';
 import CopyModal from '../CopyModal';
 
 interface EelListProps {
@@ -71,9 +71,7 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
               type="text"
               onClick={() => {
                 setSelectedRowKeys((selectedKeys) =>
-                  data
-                    .map((e) => e.id || '')
-                    .filter((e) => selectedKeys.indexOf(e) < 0),
+                  data.map((e) => e.id || '').filter((e) => selectedKeys.indexOf(e) < 0),
                 );
               }}
             >
@@ -93,12 +91,7 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
               sorter={sorter}
               setSorter={setSorter}
             />,
-            <Button
-              key="reload"
-              type="text"
-              icon={<ReloadOutlined />}
-              onClick={refresh}
-            >
+            <Button key="reload" type="text" icon={<ReloadOutlined />} onClick={refresh}>
               {mobile ? null : '刷新'}
             </Button>,
           ],
@@ -109,11 +102,7 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
             render: (_, entity) =>
               entity.category && !mobile ? (
                 <Tag color={entity.color}>
-                  <a
-                    onClick={() =>
-                      runSearch(run, { category: entity.categoryId })
-                    }
-                  >
+                  <a onClick={() => runSearch(run, { category: entity.categoryId })}>
                     {entity.category}
                   </a>
                 </Tag>
@@ -125,22 +114,14 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
               <span>
                 {entity.category && mobile && (
                   <Tag color={entity.color}>
-                    <a
-                      onClick={() =>
-                        runSearch(run, { category: entity.categoryId })
-                      }
-                    >
+                    <a onClick={() => runSearch(run, { category: entity.categoryId })}>
                       {entity.category}
                     </a>
                   </Tag>
                 )}
                 {entity.group && (
                   <Tag>
-                    <a
-                      onClick={() => runSearch(run, { group: entity.groupId })}
-                    >
-                      {entity.group}
-                    </a>
+                    <a onClick={() => runSearch(run, { group: entity.groupId })}>{entity.group}</a>
                   </Tag>
                 )}
                 <a href={entity.magnet}>{dom}</a>
@@ -200,20 +181,14 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
                       </span>
                       <span>
                         <ClockCircleOutlined />{' '}
-                        {mobile
-                          ? time.calendar()
-                          : time.format('YYYY/MM/DD hh:mm')}
+                        {mobile ? time.calendar() : time.format('YYYY/MM/DD hh:mm')}
                       </span>
                     </>
                   ) : null}
 
                   <Space>
                     {mobile ? null : (
-                      <Button
-                        type="link"
-                        icon={<DownloadOutlined />}
-                        href={entity.magnet}
-                      />
+                      <Button type="link" icon={<DownloadOutlined />} href={entity.magnet} />
                     )}
                     <Button
                       type="link"

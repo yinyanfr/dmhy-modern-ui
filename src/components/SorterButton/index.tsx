@@ -9,12 +9,7 @@ interface SorterButtonProps {
   setSorter?: Dispatch<SetStateAction<ISort>>;
 }
 
-const SorterButton: FC<SorterButtonProps> = ({
-  name,
-  label,
-  sorter,
-  setSorter,
-}) => {
+const SorterButton: FC<SorterButtonProps> = ({ name, label, sorter, setSorter }) => {
   let icon: ReactNode = undefined;
   if (name === sorter?.dataIndex) {
     if (sorter?.type === 'ascend') {

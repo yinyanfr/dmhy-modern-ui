@@ -1,4 +1,4 @@
-import { DMHYListParams } from '@/services';
+import type { DMHYListParams } from '@/services';
 import { Button, Card, InputNumber } from 'antd';
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
@@ -15,9 +15,7 @@ const Paginator: FC<PaginatorProps> = ({ loading, run }) => {
   const [localPage, setLocalPage] = useState(page);
 
   useEffect(() => {
-    if (page !== localPage) {
-      setLocalPage(page);
-    }
+    setLocalPage(page);
   }, [page]);
 
   const rerun = async (newPage: number) => {

@@ -1,9 +1,5 @@
-import { DMHYListParams } from '@/services';
-import {
-  CloseCircleOutlined,
-  RedoOutlined,
-  SearchOutlined,
-} from '@ant-design/icons';
+import type { DMHYListParams } from '@/services';
+import { CloseCircleOutlined, RedoOutlined, SearchOutlined } from '@ant-design/icons';
 import { Button, Card, Input, Select } from 'antd';
 import type { FC } from 'react';
 import { useModel, useRequest } from 'umi';
@@ -70,9 +66,7 @@ const SearchBar: FC<SearchBarProps> = ({ run }) => {
             }}
             optionFilterProp="label"
             filterOption={(input, option) =>
-              (option!.label as unknown as string)
-                .toLowerCase()
-                .includes(input.toLowerCase())
+              (option!.label as unknown as string).toLowerCase().includes(input.toLowerCase())
             }
           >
             {data?.categories?.map((e) => (
@@ -97,9 +91,7 @@ const SearchBar: FC<SearchBarProps> = ({ run }) => {
             }}
             optionFilterProp="label"
             filterOption={(input, option) =>
-              (option!.label as unknown as string)
-                .toLowerCase()
-                .includes(input.toLowerCase())
+              (option!.label as unknown as string).toLowerCase().includes(input.toLowerCase())
             }
           />
         </div>
@@ -118,9 +110,7 @@ const SearchBar: FC<SearchBarProps> = ({ run }) => {
             }}
             optionFilterProp="label"
             filterOption={(input, option) =>
-              (option!.label as unknown as string)
-                .toLowerCase()
-                .includes(input.toLowerCase())
+              (option!.label as unknown as string).toLowerCase().includes(input.toLowerCase())
             }
           />
         </div>

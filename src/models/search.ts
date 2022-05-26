@@ -31,15 +31,22 @@ export default () => {
   };
 
   const setSearch = (modifier: SearchModifier) => {
-    const { keyword, category, group, order, uploader, uploaderName, page } =
-      modifier;
-    setKeyWord((prev) => keyword || prev);
-    setCategory((prev) => category || prev);
-    setGroup((prev) => group || prev);
-    setOrder((prev) => order || prev);
-    setUploader((prev) => uploader || prev);
-    setUploaderName((prev) => uploaderName || prev);
-    setPage(() => page || 1); // reset page when new criteria
+    const {
+      keyword: _keyword,
+      category: _category,
+      group: _group,
+      order: _order,
+      uploader: _uploader,
+      uploaderName: _uploaderName,
+      page: _page,
+    } = modifier;
+    setKeyWord((prev) => _keyword || prev);
+    setCategory((prev) => _category || prev);
+    setGroup((prev) => _group || prev);
+    setOrder((prev) => _order || prev);
+    setUploader((prev) => _uploader || prev);
+    setUploaderName((prev) => _uploaderName || prev);
+    setPage(() => _page || 1); // reset page when new criteria
   };
 
   const runSearch = (
@@ -52,7 +59,6 @@ export default () => {
       group: _group = group,
       order: _order = order,
       uploader: _uploader = uploader,
-      uploaderName: _uploaderName = uploaderName,
       page: _page = 1, // reset page when new criteria
     } = modifier || {};
     setSearch(modifier || {});
