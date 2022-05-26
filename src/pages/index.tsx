@@ -1,7 +1,7 @@
 import { EelList, SearchBar } from '@/components';
 import { isMobile } from '@/lib';
 import { PageContainer } from '@ant-design/pro-layout';
-import { Divider } from 'antd';
+import { BackTop, Divider } from 'antd';
 import type { FC } from 'react';
 import { Helmet, useRequest } from 'umi';
 
@@ -27,6 +27,7 @@ const App: FC = () => {
           content="Yet another dmhy frontend implementation"
         />
       </Helmet>
+      <BackTop />
       {isMobile() ? (
         listview
       ) : (

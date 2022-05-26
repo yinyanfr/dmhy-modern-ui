@@ -1,1 +1,1 @@
-export { default as parseDMHY } from './dmhy';
+export { parseDMHYList } from './dmhy';

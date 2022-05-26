@@ -10,11 +10,18 @@ declare module '*.svg' {
 }
 
 interface EelItem {
-  id: string;
+  id?: string;
   title?: string;
   group?: string;
+  groupId?: string;
   time?: string;
   category?: string;
+  categoryId?: string;
+  uploader?: string;
+  uploaderId?: string;
+  seeder?: number;
+  leecher?: number;
+  completed?: number;
   size?: number;
   magnet?: string;
   color?: string;

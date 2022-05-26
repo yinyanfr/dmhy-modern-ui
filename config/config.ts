@@ -12,7 +12,7 @@ export default defineConfig({
     hmr: true,
   },
   layout,
-  title: '冻鳗之家',
+  title: '冻鳗花园',
   // https://umijs.org/zh-CN/plugins/plugin-locale
   locale: {
     // default zh-CN

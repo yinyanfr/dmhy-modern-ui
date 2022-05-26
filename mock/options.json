@@ -1,0 +1,423 @@
+{
+  "categories": [
+    {
+      "value": "0",
+      "label": "全部"
+    },
+    {
+      "value": "2",
+      "label": "动画",
+      "color": "red"
+    },
+    {
+      "value": "31",
+      "label": "季度全集",
+      "color": "red"
+    },
+    {
+      "value": "3",
+      "label": "漫画",
+      "color": "green"
+    },
+    {
+      "value": "41",
+      "label": "港台原版",
+      "color": "green"
+    },
+    {
+      "value": "42",
+      "label": "日文原版",
+      "color": "green"
+    },
+    {
+      "value": "4",
+      "label": "音乐",
+      "color": "purple"
+    },
+    {
+      "value": "43",
+      "label": "动漫音乐",
+      "color": "purple"
+    },
+    {
+      "value": "44",
+      "label": "同人音乐",
+      "color": "purple"
+    },
+    {
+      "value": "15",
+      "label": "流行音乐",
+      "color": "purple"
+    },
+    {
+      "value": "6",
+      "label": "日剧",
+      "color": "blue"
+    },
+    {
+      "value": "7",
+      "label": "ＲＡＷ",
+      "color": "orange"
+    },
+    {
+      "value": "9",
+      "label": "游戏",
+      "color": "#0eb9e7"
+    },
+    {
+      "value": "17",
+      "label": "电脑游戏",
+      "color": "#0eb9e7"
+    },
+    {
+      "value": "18",
+      "label": "电视游戏",
+      "color": "#0eb9e7"
+    },
+    {
+      "value": "19",
+      "label": "掌机游戏",
+      "color": "#0eb9e7"
+    },
+    {
+      "value": "20",
+      "label": "网络游戏",
+      "color": "#0eb9e7"
+    },
+    {
+      "value": "21",
+      "label": "游戏周边",
+      "color": "#0eb9e7"
+    },
+    {
+      "value": "12",
+      "label": "特摄",
+      "color": "brown"
+    },
+    {
+      "value": "1",
+      "label": "其他",
+      "color": "black"
+    }
+  ],
+  "groups": [
+    {
+      "value": "0",
+      "label": "全部"
+    },
+    {
+      "value": "117",
+      "label": "动漫花园"
+    },
+    {
+      "value": "823",
+      "label": "拨雪寻春"
+    },
+    {
+      "value": "801",
+      "label": "NC-Raws"
+    },
+    {
+      "value": "669",
+      "label": "喵萌奶茶屋"
+    },
+    {
+      "value": "803",
+      "label": "Lilith-Raws"
+    },
+    {
+      "value": "648",
+      "label": "魔星字幕团"
+    },
+    {
+      "value": "619",
+      "label": "桜都字幕组"
+    },
+    {
+      "value": "767",
+      "label": "天月动漫&amp;发布组"
+    },
+    {
+      "value": "185",
+      "label": "极影字幕社"
+    },
+    {
+      "value": "657",
+      "label": "LoliHouse"
+    },
+    {
+      "value": "151",
+      "label": "悠哈C9字幕社"
+    },
+    {
+      "value": "749",
+      "label": "幻月字幕组"
+    },
+    {
+      "value": "390",
+      "label": "天使动漫论坛"
+    },
+    {
+      "value": "303",
+      "label": "动漫国字幕组"
+    },
+    {
+      "value": "241",
+      "label": "幻樱字幕组"
+    },
+    {
+      "value": "47",
+      "label": "爱恋字幕社"
+    },
+    {
+      "value": "805",
+      "label": "DBD制作组"
+    },
+    {
+      "value": "604",
+      "label": "c.c动漫"
+    },
+    {
+      "value": "550",
+      "label": "萝莉社活动室"
+    },
+    {
+      "value": "283",
+      "label": "千夏字幕组"
+    },
+    {
+      "value": "772",
+      "label": "IET字幕组"
+    },
+    {
+      "value": "288",
+      "label": "诸神kamigami字幕组"
+    },
+    {
+      "value": "804",
+      "label": "霜庭云花Sub"
+    },
+    {
+      "value": "755",
+      "label": "GMTeam"
+    },
+    {
+      "value": "454",
+      "label": "风车字幕组"
+    },
+    {
+      "value": "37",
+      "label": "雪飘工作室(FLsnow)"
+    },
+    {
+      "value": "764",
+      "label": "MCE汉化组"
+    },
+    {
+      "value": "488",
+      "label": "丸子家族"
+    },
+    {
+      "value": "731",
+      "label": "星空字幕组"
+    },
+    {
+      "value": "574",
+      "label": "梦蓝字幕组"
+    },
+    {
+      "value": "504",
+      "label": "LoveEcho!"
+    },
+    {
+      "value": "650",
+      "label": "SweetSub"
+    },
+    {
+      "value": "630",
+      "label": "枫叶字幕组"
+    },
+    {
+      "value": "479",
+      "label": "Little Subbers!"
+    },
+    {
+      "value": "321",
+      "label": "轻之国度"
+    },
+    {
+      "value": "649",
+      "label": "云光字幕组"
+    },
+    {
+      "value": "520",
+      "label": "豌豆字幕组"
+    },
+    {
+      "value": "626",
+      "label": "驯兽师联盟"
+    },
+    {
+      "value": "666",
+      "label": "中肯字幕组"
+    },
+    {
+      "value": "781",
+      "label": "SW字幕组"
+    },
+    {
+      "value": "576",
+      "label": "银色子弹字幕组"
+    },
+    {
+      "value": "434",
+      "label": "风之圣殿"
+    },
+    {
+      "value": "665",
+      "label": "YWCN字幕组"
+    },
+    {
+      "value": "228",
+      "label": "KRL字幕组"
+    },
+    {
+      "value": "49",
+      "label": "华盟字幕社"
+    },
+    {
+      "value": "627",
+      "label": "波洛咖啡厅"
+    },
+    {
+      "value": "88",
+      "label": "动音漫影"
+    },
+    {
+      "value": "581",
+      "label": "VCB-Studio"
+    },
+    {
+      "value": "407",
+      "label": "DHR动研字幕组"
+    },
+    {
+      "value": "719",
+      "label": "80v08"
+    },
+    {
+      "value": "732",
+      "label": "肥猫压制"
+    },
+    {
+      "value": "680",
+      "label": "Little字幕组"
+    },
+    {
+      "value": "613",
+      "label": "AI-Raws"
+    },
+    {
+      "value": "806",
+      "label": "离谱Sub"
+    },
+    {
+      "value": "812",
+      "label": "虹咲学园烤肉同好会"
+    },
+    {
+      "value": "636",
+      "label": "ARIA吧汉化组"
+    },
+    {
+      "value": "75",
+      "label": "柯南事务所"
+    },
+    {
+      "value": "821",
+      "label": "百冬练习组"
+    },
+    {
+      "value": "641",
+      "label": "冷番补完字幕组"
+    },
+    {
+      "value": "765",
+      "label": "爱咕字幕组"
+    },
+    {
+      "value": "822",
+      "label": "极彩字幕组"
+    },
+    {
+      "value": "217",
+      "label": "AQUA工作室"
+    },
+    {
+      "value": "592",
+      "label": "未央阁联盟"
+    },
+    {
+      "value": "703",
+      "label": "届恋字幕组"
+    },
+    {
+      "value": "808",
+      "label": "夜莺家族"
+    },
+    {
+      "value": "734",
+      "label": "TD-RAWS"
+    },
+    {
+      "value": "447",
+      "label": "梦幻恋樱"
+    },
+    {
+      "value": "790",
+      "label": "WBX-SUB"
+    },
+    {
+      "value": "807",
+      "label": "Liella!の烧烤摊"
+    },
+    {
+      "value": "814",
+      "label": "Amor字幕组"
+    },
+    {
+      "value": "813",
+      "label": "MingYSub"
+    },
+    {
+      "value": "817",
+      "label": "EMe"
+    },
+    {
+      "value": "818",
+      "label": "Alchemist"
+    },
+    {
+      "value": "819",
+      "label": "黑岩射手吧字幕组"
+    },
+    {
+      "value": "816",
+      "label": "ANi"
+    }
+  ],
+  "orders": [
+    {
+      "value": "date-desc",
+      "label": "发布时间从后往前"
+    },
+    {
+      "value": "date-asc",
+      "label": "发布时间从前往后"
+    },
+    {
+      "value": "rel",
+      "label": "相关度"
+    }
+  ]
+}

@@ -5,12 +5,15 @@ import { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import { convertFromByte, isMobile, sortData } from '@/lib';
 import {
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+  CheckOutlined,
   ClockCircleOutlined,
-  CopyOutlined,
   DownloadOutlined,
   FileOutlined,
   ReloadOutlined,
   ShareAltOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
 import moment from 'moment';
 import { getLocale } from 'umi';
@@ -105,8 +108,28 @@ const EelList: FC<EelListProps> = ({ data, loading, refresh }) => {
                 {/* <span><FileOutlined /> {entity.size}</span> */}
                 <span>
                   <ClockCircleOutlined />{' '}
-                  {mobile ? time.calendar() : time.format('lll')}
+                  {mobile ? time.calendar() : time.format('YYYY/MM/DD hh:mm')}
                 </span>
+
+                {mobile ? null : (
+                  <span>
+                    <span>
+                      <ArrowUpOutlined /> {entity.seeder || '-'}
+                    </span>
+                    <span>
+                      <ArrowDownOutlined /> {entity.leecher || '-'}
+                    </span>
+                    <span>
+                      <CheckOutlined /> {entity.completed || '-'}
+                    </span>
+                  </span>
+                )}
+
+                {mobile ? null : (
+                  <a>
+                    <UserOutlined /> {entity.uploader}
+                  </a>
+                )}
 
                 <Space>
                   {mobile ? null : (

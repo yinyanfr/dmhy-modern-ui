@@ -1,11 +1,21 @@
 import { SearchOutlined } from '@ant-design/icons';
-import { Card, Divider, Input, Select, Space } from 'antd';
+import { Card, Input, Select } from 'antd';
 import type { FC } from 'react';
+import { useRequest } from 'umi';
 
-const mockOptions = [{ value: 'all', label: '全部' }];
-const mockOptions1 = [{ value: 'all', label: '时间倒序' }];
+interface Option {
+  value: string;
+  label: string;
+  color?: string;
+}
+interface OptionsData {
+  categories: Option[];
+  groups: Option[];
+  orders: Option[];
+}
 
 const SearchBar: FC = () => {
+  const { loading, data } = useRequest<{ data: OptionsData }>('/api/options');
   return (
     <Card>
       <Input.Search
@@ -21,9 +31,10 @@ const SearchBar: FC = () => {
           <Select
             style={{ width: 120 }}
             showSearch
-            options={mockOptions}
+            loading={loading}
+            options={data?.categories}
             defaultActiveFirstOption
-            defaultValue="all"
+            defaultValue="0"
             optionFilterProp="label"
             filterOption={(input, option) =>
               (option!.label as unknown as string)
@@ -37,9 +48,10 @@ const SearchBar: FC = () => {
           <Select
             style={{ width: 120 }}
             showSearch
-            options={mockOptions}
+            loading={loading}
+            options={data?.groups}
             defaultActiveFirstOption
-            defaultValue="all"
+            defaultValue="0"
             optionFilterProp="label"
             filterOption={(input, option) =>
               (option!.label as unknown as string)
@@ -51,11 +63,12 @@ const SearchBar: FC = () => {
         <div>
           顺序：
           <Select
-            style={{ width: 120 }}
+            style={{ width: 180 }}
             showSearch
-            options={mockOptions1}
+            loading={loading}
+            options={data?.orders}
             defaultActiveFirstOption
-            defaultValue="all"
+            defaultValue="date-desc"
             optionFilterProp="label"
             filterOption={(input, option) =>
               (option!.label as unknown as string)
