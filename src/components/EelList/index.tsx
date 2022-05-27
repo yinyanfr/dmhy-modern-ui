@@ -20,20 +20,12 @@ import {
 import moment from 'moment';
 import { getLocale, useModel } from 'umi';
 import SorterButton from '../SorterButton';
-import type { DMHYListParams } from '@/services';
 import CopyModal from '../CopyModal';
 
-interface EelListProps {
-  data?: EelItem[];
-  loading?: boolean;
-  refresh?: () => Promise<EelItem[]>;
-  run?: (params?: DMHYListParams) => Promise<EelItem[]>;
-}
-
-const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
+const EelList: FC = () => {
   const mobile = isMobile();
   const locale = getLocale();
-  const { runSearch } = useModel('search');
+  const { runSearch, data = [], loading, refresh, run } = useModel('search');
 
   const [selectedRowKeys, setSelectedRowKeys] = useState<ReactText[]>([]);
   const [sorter, setSorter] = useState<ISort>({
@@ -51,7 +43,7 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
     <>
       <ProList<EelItem>
         rowKey="id"
-        headerTitle="最新资源"
+        // headerTitle="最新资源"
         loading={loading}
         tableStyle={{ padding: 0, margin: 0 }}
         itemLayout={mobile ? 'vertical' : 'horizontal'}
@@ -124,7 +116,13 @@ const EelList: FC<EelListProps> = ({ data = [], loading, refresh, run }) => {
                     <a onClick={() => runSearch(run, { group: entity.groupId })}>{entity.group}</a>
                   </Tag>
                 )}
-                <a href={entity.magnet}>{dom}</a>
+                <a
+                  href={`https://share.dmhy.org/topics/view/${entity.id}.html`}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {dom}
+                </a>
               </span>
             ),
           },

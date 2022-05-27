@@ -10,7 +10,7 @@ export async function getDMHYList() {
 }
 
 const api: Record<string, RequestHandler> = {
-  'GET /api/list': async (_, res) => {
+  'GET /mock/list': async (_, res) => {
     try {
       const html = await getDMHYList();
       const list = parseDMHYList(html);
@@ -19,7 +19,7 @@ const api: Record<string, RequestHandler> = {
       res.status(404).send(error);
     }
   },
-  'GET /api/options': (_, res) => {
+  'GET /mock/options': (_, res) => {
     res.send({ data: options });
   },
 };

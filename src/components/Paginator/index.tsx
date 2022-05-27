@@ -1,17 +1,11 @@
-import type { DMHYListParams } from '@/services';
 import { Button, Card, InputNumber } from 'antd';
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 import { useModel } from 'umi';
 import styles from './index.less';
 
-interface PaginatorProps {
-  loading?: boolean;
-  run?: (params?: DMHYListParams) => Promise<EelItem[]>;
-}
-
-const Paginator: FC<PaginatorProps> = ({ loading, run }) => {
-  const { page, runSearch } = useModel('search');
+const Paginator: FC = () => {
+  const { page, runSearch, loading, run } = useModel('search');
   const [localPage, setLocalPage] = useState(page);
 
   useEffect(() => {
@@ -27,10 +21,8 @@ const Paginator: FC<PaginatorProps> = ({ loading, run }) => {
       <Button
         disabled={loading || localPage <= 1}
         onClick={async () => {
-          if (run) {
-            await rerun(localPage - 1);
-            setLocalPage((prev) => prev - 1);
-          }
+          await rerun(localPage - 1);
+          setLocalPage((prev) => prev - 1);
         }}
         type="link"
       >
@@ -46,18 +38,14 @@ const Paginator: FC<PaginatorProps> = ({ loading, run }) => {
           setLocalPage(value);
         }}
         onPressEnter={async () => {
-          if (run) {
-            await rerun(localPage);
-          }
+          await rerun(localPage);
         }}
       />
       <Button
         disabled={loading}
         onClick={async () => {
-          if (run) {
-            await rerun(localPage + 1);
-            setLocalPage((prev) => prev + 1);
-          }
+          await rerun(localPage + 1);
+          setLocalPage((prev) => prev + 1);
         }}
         type="link"
       >

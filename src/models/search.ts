@@ -1,5 +1,7 @@
 import type { DMHYListParams } from '@/services';
+import { getDMHYList } from '@/services';
 import { useState } from 'react';
+import { useRequest } from 'umi';
 
 interface SearchModifier {
   keyword?: string;
@@ -12,6 +14,7 @@ interface SearchModifier {
 }
 
 export default () => {
+  const { loading, data, refresh, run } = useRequest(getDMHYList);
   const [keyword, setKeyWord] = useState<string>();
   const [category, setCategory] = useState<string>();
   const [group, setGroup] = useState<string>();
@@ -50,7 +53,7 @@ export default () => {
   };
 
   const runSearch = (
-    run?: (params?: DMHYListParams) => Promise<EelItem[]>,
+    _run: (params?: DMHYListParams) => Promise<EelItem[]> = run,
     modifier?: SearchModifier,
   ) => {
     const {
@@ -62,8 +65,8 @@ export default () => {
       page: _page = 1, // reset page when new criteria
     } = modifier || {};
     setSearch(modifier || {});
-    return run?.({
-      keyword: _keyword ? encodeURI(_keyword) : undefined,
+    return _run?.({
+      keyword: _keyword,
       categoryId: _category,
       groupId: _group,
       order: _order,
@@ -73,6 +76,10 @@ export default () => {
   };
 
   return {
+    loading,
+    data,
+    refresh,
+    run,
     keyword,
     setKeyWord,
     category,

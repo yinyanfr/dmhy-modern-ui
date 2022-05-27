@@ -1,6 +1,6 @@
 {
-  "name": "eeling",
-  "version": "0.0.1",
+  "name": "dmhy-alt-ui",
+  "version": "1.0.0",
   "private": false,
   "description": "Yet Another DMHY Frontend Implementation",
   "license": "MIT",
@@ -50,6 +50,7 @@
     "moment": "^2.29.3",
     "opencc-js": "^1.0.3",
     "react": "17.x",
+    "react-cookie-consent": "^7.4.1",
     "react-dark-mode-toggle-2": "^2.0.2",
     "react-dom": "17.x",
     "umi": "^3.5.24"

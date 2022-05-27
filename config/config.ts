@@ -68,8 +68,8 @@ export default defineConfig({
       href: '/site.webmanifest',
     },
   ],
-  ssr: {
-    devServerRender: true,
-  },
-  mock: {},
+  // ssr: {
+  //   devServerRender: true,
+  // },
+  // mock: {},
 });

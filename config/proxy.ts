@@ -1,7 +1,7 @@
 export default {
   dev: {
-    '/v1/': {
-      target: 'http://localhost:20222/',
+    '/api/': {
+      target: 'http://localhost:20226/',
       changeOrigin: true,
       // pathRewrite: { '^/v1': '' },
       pathRewrite: { '^': '' },

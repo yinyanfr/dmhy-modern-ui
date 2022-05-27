@@ -1,4 +1,4 @@
-import type { DMHYListParams } from '@/services';
+import { getDMHYOptions } from '@/services';
 import { CloseCircleOutlined, RedoOutlined, SearchOutlined } from '@ant-design/icons';
 import { Button, Card, Input, Select } from 'antd';
 import type { FC } from 'react';
@@ -15,13 +15,10 @@ interface OptionsData {
   orders: Option[];
 }
 
-interface SearchBarProps {
-  run?: (params?: DMHYListParams) => Promise<EelItem[]>;
-}
-
-const SearchBar: FC<SearchBarProps> = ({ run }) => {
-  const { loading, data } = useRequest<{ data: OptionsData }>('/api/options');
+const SearchBar: FC = () => {
+  const { loading, data } = useRequest<{ data: OptionsData }>(getDMHYOptions);
   const {
+    run,
     setKeyWord,
     category,
     setCategory,
@@ -46,7 +43,7 @@ const SearchBar: FC<SearchBarProps> = ({ run }) => {
         enterButton
         onSearch={async (value) => {
           setKeyWord(value);
-          await runSearch(run);
+          await runSearch(run, { keyword: value });
         }}
       />
 
